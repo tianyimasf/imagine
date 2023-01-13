@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music FFT Visualizer</title>
+	<style></style>
+</head>
+{% block content %}
+<body>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Upload</button>
+	</form>
+</body>
+{% endblock %}
+<html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music FFT Visualizer</title>
+	<style></style>
+</head>
+<body>
+	{% if MusicVisualizer %}
+	<audio controls id='song' src='{{  MusicVisualizer.song.url }}' preload="metadata" ></audio>
+	{% endif %}
+	<form action='upload' method='GET'>
+		<button href="{% url 'upload_song' %}">back</button>
+	</form>
+	Please wait for up to a few minutes for the visualizer to prepare. Once it is prepared, the browser will let you know.
+	<canvas id="MusicVisualizerCanvas"></canvas>
+	{% load static %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="{% static 'MusicVisualizer.js' %}"></script>
+</body>
+<html>
